@@ -1,0 +1,98 @@
+// Header (BEM: site-header)
+.site-header {
+  position: sticky;
+  top: 16px;
+  z-index: 10;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.86)
+    );
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 30px rgba(15, 15, 30, 0.08);
+  backdrop-filter: blur(34px);
+}
+
+.site-header__logo {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-header__nav-item {
+  border: none;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(10, 10, 16, 0.78);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition:
+    background-color 0.16s ease-out,
+    box-shadow 0.16s ease-out,
+    transform 0.14s ease-out,
+    color 0.16s ease-out,
+    border-color 0.16s ease-out;
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.site-header__nav-item--active {
+  background: rgba(255, 255, 255, 0.55);
+  color: rgba(20, 20, 26, 0.96);
+  border-color: rgba(229, 57, 69, 0.22);
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+}
+
+.site-header__nav-item--muted {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: var(--border-subtle);
+}
+
+.site-header__nav-item:hover {
+  transform: translateY(-1px) scale(1.02);
+  background: rgba(255, 255, 255, 0.32);
+  border-color: rgba(229, 57, 69, 0.26);
+}
+
+.site-header__nav-item--active:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 640px) {
+  .site-header__nav {
+    gap: 4px;
+  }
+
+  .site-header__nav-item {
+    padding-inline: 10px;
+    font-size: 12px;
+  }
+}

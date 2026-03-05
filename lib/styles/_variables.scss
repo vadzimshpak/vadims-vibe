@@ -1,0 +1,14 @@
+// Design tokens and CSS custom properties
+:root {
+  --background: #f6f5f7;
+  --foreground: #161616;
+  --accent: #e53945;
+  --accent-soft: #ff6b81;
+  --surface: rgba(255, 255, 255, 0.9);
+  --surface-soft: rgba(255, 255, 255, 0.96);
+  --border-subtle: rgba(12, 12, 13, 0.04);
+  --shadow-soft: 0 12px 40px rgba(15, 15, 30, 0.08);
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --page-width: 1120px;
+}

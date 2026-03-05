@@ -1,0 +1,10 @@
+// Entry point: design tokens and layout/component styles from lib
+@use "../lib/styles/variables";
+@use "../lib/styles/reset";
+@use "../lib/styles/page";
+@use "../lib/styles/site-header";
+@use "../lib/styles/intro";
+@use "../lib/styles/projects-list";
+@use "../lib/styles/project-detail";
+@use "../lib/styles/site-footer";
+@use "../lib/styles/contacts";

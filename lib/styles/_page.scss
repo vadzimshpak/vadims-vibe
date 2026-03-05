@@ -1,0 +1,81 @@
+// Layout: page wrapper, content, main block and gradient animation
+.page {
+  position: relative;
+  min-height: 100vh;
+  padding: 24px 16px 0;
+  overflow: hidden;
+}
+
+.page--full {
+  width: 100%;
+}
+
+.page__gradient {
+  position: fixed;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 182, 193, 0.22), transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(255, 234, 210, 0.23), transparent 55%),
+    radial-gradient(circle at 0% 100%, rgba(229, 57, 69, 0.24), transparent 55%);
+  opacity: 1;
+  filter: blur(36px);
+  transform: translate3d(0, 0, 0);
+  animation: page-gradient-move 24s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.page__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--page-width);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.page-main {
+  padding: 18px 20px 24px;
+  border-radius: calc(var(--radius-lg) + 4px);
+  background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.92),
+      rgba(255, 255, 255, 0.86)
+    );
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(36px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.page-main--centered {
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 32px 32px 0;
+  }
+
+  .page-main {
+    padding: 28px 32px 32px;
+    gap: 40px;
+  }
+}
+
+@keyframes page-gradient-move {
+  0% {
+    transform: translate3d(-3%, -2%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(3%, 3%, 0) scale(1.03);
+  }
+  100% {
+    transform: translate3d(-4%, 2%, 0) scale(1.05);
+  }
+}

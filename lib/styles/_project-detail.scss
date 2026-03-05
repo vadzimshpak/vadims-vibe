@@ -1,0 +1,120 @@
+// Project detail page and button-link (BEM: project-detail, button-link)
+.project-detail {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-detail--empty {
+  align-items: center;
+  text-align: center;
+}
+
+.project-detail__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-detail__title {
+  margin: 0;
+  font-size: clamp(26px, 3.2vw, 30px);
+}
+
+.project-detail__summary {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(18, 18, 26, 0.72);
+}
+
+.project-detail__section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-detail__section-title {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(18, 18, 26, 0.7);
+}
+
+.project-detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-detail__tag {
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(229, 57, 69, 0.12);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.project-detail__tag--accent {
+  background: rgba(229, 57, 69, 0.08);
+  border-color: rgba(229, 57, 69, 0.32);
+}
+
+.project-detail__text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(18, 18, 26, 0.78);
+}
+
+.project-detail__footer {
+  margin-top: 8px;
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.16s ease-out,
+    color 0.16s ease-out,
+    border-color 0.16s ease-out,
+    box-shadow 0.16s ease-out,
+    transform 0.12s ease-out;
+}
+
+.button-link--primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  color: #ffffff;
+  border-color: rgba(229, 57, 69, 0.7);
+  box-shadow: 0 14px 38px rgba(229, 57, 69, 0.36);
+}
+
+.button-link--ghost {
+  background: rgba(255, 255, 255, 0.92);
+  color: rgba(12, 12, 16, 0.9);
+  border-color: rgba(18, 18, 26, 0.08);
+}
+
+.button-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(15, 15, 30, 0.18);
+}
