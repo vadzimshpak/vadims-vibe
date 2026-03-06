@@ -1,3 +1,17 @@
+// Projects block
+.projects-block {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(18, 18, 26, 0.08);
+}
+
+@media (min-width: 768px) {
+  .projects-block {
+    margin-top: 40px;
+    padding-top: 36px;
+  }
+}
+
 // Projects section — колонка, по одному проекту в ряд
 .projects {
   display: flex;
