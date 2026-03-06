@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { findProjectBySlug } from "@/lib/projects";
 
 type ProjectPageProps = {
@@ -64,6 +65,19 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <p className="project-detail__summary">{project.summary}</p>
             </header>
 
+            {project.image && (
+              <div className="project-detail__image-wrap">
+                <Image
+                  src={project.image}
+                  alt=""
+                  width={720}
+                  height={400}
+                  className="project-detail__image"
+                  sizes="(max-width: 768px) 100vw, 720px"
+                />
+              </div>
+            )}
+
             <section className="project-detail__section">
               <h2 className="project-detail__section-title">Стек</h2>
               <ul className="project-detail__tags">
@@ -80,14 +94,43 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
             <section className="project-detail__section">
               <h2 className="project-detail__section-title">
+                Ссылка на проект
+              </h2>
+              {project.url ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-detail__link"
+                >
+                  Перейти на сайт →
+                </a>
+              ) : (
+                <p className="project-detail__text project-detail__text--muted">
+                  Ссылка на проект не предоставлена.
+                </p>
+              )}
+            </section>
+
+            <section className="project-detail__section">
+              <h2 className="project-detail__section-title">
                 Описание проекта
               </h2>
-              <p className="project-detail__text">
-                Здесь будет подробное описание проекта, ключевые решения по
-                архитектуре, интересные UI-паттерны и технические детали. Позже
-                можно будет добавить скриншоты, ссылки на репозиторий и
-                демо-версию.
-              </p>
+              {project.description ? (
+                <div className="project-detail__description">
+                  {project.description
+                    .split(/\n\n+/)
+                    .map((paragraph, i) => (
+                      <p key={i} className="project-detail__text">
+                        {paragraph.trim()}
+                      </p>
+                    ))}
+                </div>
+              ) : (
+                <p className="project-detail__text project-detail__text--muted">
+                  Описание пока не добавлено.
+                </p>
+              )}
             </section>
 
             <footer className="project-detail__footer">

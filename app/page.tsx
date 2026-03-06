@@ -44,7 +44,7 @@ export default function Home() {
               Портфолио <span className="home-hero__accent">vadims-vibe</span>
             </h1>
             <p className="home-hero__sub">
-              Frontend / UI / UX — коллекция проектов с акцентом на аккуратный
+              Frontend / UI / UX / И другое... — коллекция проектов с акцентом на аккуратный
               UI, анимации и продуманный пользовательский опыт.
             </p>
           </div>
@@ -61,37 +61,38 @@ export default function Home() {
               </p>
             </header>
 
-            <div className="projects__grid">
-              {projects.map((project) => (
+            <div className="projects__column">
+              {projects.map((project, index) => (
                 <Link
                   key={project.slug}
                   href={`/projects/${project.slug}`}
-                  className="project-card"
+                  className={`project-row project-row--${index % 2 === 0 ? "image-right" : "image-left"}`}
                 >
-                  <article className="project-card__body">
-                    <header className="project-card__header">
-                      <h3 className="project-card__title">{project.title}</h3>
-                      <p className="project-card__summary">
-                        {project.summary}
-                      </p>
-                    </header>
-                    <footer className="project-card__footer">
-                      <ul className="project-card__tags">
-                        {project.stack.map((item) => (
-                          <li
-                            key={item}
-                            className="project-card__tag project-card__tag--accent"
-                          >
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                      <span className="project-card__link">
-                        Подробнее
-                        <span className="project-card__link-arrow">→</span>
-                      </span>
-                    </footer>
-                  </article>
+                  <div className="project-row__content">
+                    <h3 className="project-row__title">{project.title}</h3>
+                    <p className="project-row__summary">{project.summary}</p>
+                    <ul className="project-row__tags">
+                      {project.stack.map((item) => (
+                        <li key={item} className="project-row__tag">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="project-row__media">
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt=""
+                        width={800}
+                        height={450}
+                        className="project-row__image"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    ) : (
+                      <span className="project-row__placeholder">{project.title}</span>
+                    )}
+                  </div>
                 </Link>
               ))}
             </div>
