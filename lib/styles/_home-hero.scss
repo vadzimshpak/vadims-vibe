@@ -1,0 +1,78 @@
+// Home page hero — same style as contacts (BEM: home-hero)
+.home-hero {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.home-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/myphoto.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(18, 18, 26, 0.88) 0%,
+    rgba(18, 18, 26, 0.72) 45%,
+    rgba(18, 18, 26, 0.5) 100%
+  );
+}
+
+.home-hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 40px 24px 48px;
+}
+
+.home-hero__headline {
+  margin: 0 0 10px;
+  font-size: clamp(28px, 4.5vw, 42px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #fff;
+  max-width: 16ch;
+}
+
+.home-hero__accent {
+  color: var(--accent);
+}
+
+.home-hero__sub {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 480px;
+}
+
+@media (min-width: 768px) {
+  .home-hero {
+    min-height: 380px;
+  }
+
+  .home-hero__content {
+    padding: 56px 32px 64px;
+  }
+
+  .home-hero__headline {
+    margin-bottom: 14px;
+  }
+
+  .home-hero__sub {
+    font-size: 17px;
+  }
+}

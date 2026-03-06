@@ -9,17 +9,20 @@ export default function Home() {
       <div className="page__content">
         <header className="site-header">
           <div className="site-header__inner">
-            <div className="site-header__logo">vadims-vibe</div>
+            <Link href="/" className="site-header__logo">
+              vadims-vibe
+            </Link>
             <nav className="site-header__nav">
-              <button
-                type="button"
+              <Link
+                href="/"
                 className="site-header__nav-item site-header__nav-item--active"
               >
                 Главная
-              </button>
+              </Link>
               <button
                 type="button"
                 className="site-header__nav-item site-header__nav-item--muted"
+                disabled
               >
                 Обо мне
               </button>
@@ -33,29 +36,21 @@ export default function Home() {
           </div>
         </header>
 
-        <main className="page-main">
-          <section className="intro">
-            <div className="intro__content">
-              <p className="intro__eyebrow">Frontend / UI / UX</p>
-              <h1 className="intro__title">
-                Портфолио <span className="intro__accent">vadims-vibe</span>
-              </h1>
-              <p className="intro__text">
-                Коллекция отобранных проектов с акцентом на аккуратный UI,
-                анимации и продуманный пользовательский опыт.
-              </p>
-            </div>
-            <div className="intro__media">
-              <Image
-                src="/myphoto.jpg"
-                alt=""
-                width={260}
-                height={347}
-                className="intro__media-image"
-              />
-            </div>
-          </section>
+        <main className="home-hero">
+          <div className="home-hero__bg" aria-hidden />
+          <div className="home-hero__overlay" aria-hidden />
+          <div className="home-hero__content">
+            <h1 className="home-hero__headline">
+              Портфолио <span className="home-hero__accent">vadims-vibe</span>
+            </h1>
+            <p className="home-hero__sub">
+              Frontend / UI / UX — коллекция проектов с акцентом на аккуратный
+              UI, анимации и продуманный пользовательский опыт.
+            </p>
+          </div>
+        </main>
 
+        <div className="page-main">
           <div className="projects-block">
             <section className="projects">
             <header className="projects__header">
@@ -102,7 +97,7 @@ export default function Home() {
             </div>
             </section>
           </div>
-        </main>
+        </div>
 
         <footer className="site-footer">
           <div className="site-footer__inner">

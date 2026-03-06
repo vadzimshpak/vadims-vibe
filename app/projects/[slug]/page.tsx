@@ -18,7 +18,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="page__content">
           <header className="site-header">
             <div className="site-header__inner">
-              <div className="site-header__logo">vadims-vibe</div>
+              <Link href="/" className="site-header__logo">vadims-vibe</Link>
               <nav className="site-header__nav">
                 <Link href="/" className="site-header__nav-item">
                   Главная
@@ -48,7 +48,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <div className="page__content">
         <header className="site-header">
           <div className="site-header__inner">
-            <div className="site-header__logo">vadims-vibe</div>
+            <Link href="/" className="site-header__logo">vadims-vibe</Link>
             <nav className="site-header__nav">
               <Link href="/" className="site-header__nav-item">
                 Главная

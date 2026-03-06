@@ -1,59 +1,147 @@
-// Contacts page (BEM: contacts)
-.contacts {
+// Contacts page — hero in Upwork style (BEM: contacts-hero)
+.contacts-hero {
+  position: relative;
+  flex: 1;
+  min-height: 420px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 16px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.contacts-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/myphoto.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contacts-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(18, 18, 26, 0.88) 0%,
+    rgba(18, 18, 26, 0.72) 45%,
+    rgba(18, 18, 26, 0.5) 100%
+  );
+}
+
+.contacts-hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 48px 24px 56px;
+}
+
+.contacts-hero__headline {
+  margin: 0 0 12px;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #fff;
+  max-width: 14ch;
+}
+
+.contacts-hero__sub {
+  margin: 0 0 28px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
   max-width: 420px;
 }
 
-.contacts__title {
-  margin: 0;
-  font-size: clamp(26px, 3.2vw, 30px);
-  letter-spacing: 0.06em;
+.contacts-hero__card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  border-radius: 16px;
+  background: rgba(38, 38, 44, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 480px;
+  backdrop-filter: blur(12px);
 }
 
-.contacts__text {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.6;
-  color: rgba(18, 18, 26, 0.72);
-}
-
-.contacts__telegram {
+.contacts-hero__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 8px;
-  padding: 12px 24px;
+  padding: 12px 22px;
   border-radius: var(--radius-pill);
-  background: #0088cc;
-  color: #fff;
   font-size: 15px;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-decoration: none;
-  box-shadow: 0 10px 28px rgba(0, 136, 204, 0.35);
   transition:
     background-color 0.2s ease-out,
     transform 0.16s ease-out,
     box-shadow 0.2s ease-out;
-
-  &:hover {
-    background: #0077b5;
-    transform: translateY(-2px);
-    box-shadow: 0 14px 36px rgba(0, 136, 204, 0.4);
-  }
 }
 
-.contacts__telegram-icon {
-  width: 22px;
-  height: 22px;
+.contacts-hero__btn-icon {
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
 }
 
-.contacts__telegram-label {
-  white-space: nowrap;
+.contacts-hero__btn--primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 20px rgba(229, 57, 69, 0.35);
+
+  &:hover {
+    background: #c62839;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 28px rgba(229, 57, 69, 0.4);
+  }
+}
+
+.contacts-hero__btn--secondary {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+  }
+}
+
+@media (min-width: 768px) {
+  .contacts-hero {
+    min-height: 520px;
+  }
+
+  .contacts-hero__content {
+    padding: 64px 32px 72px;
+  }
+
+  .contacts-hero__headline {
+    margin-bottom: 16px;
+  }
+
+  .contacts-hero__sub {
+    margin-bottom: 32px;
+    font-size: 18px;
+  }
+
+  .contacts-hero__card {
+    padding: 24px 28px;
+    gap: 14px;
+  }
+
+  .contacts-hero__btn {
+    padding: 14px 26px;
+    font-size: 16px;
+  }
 }
