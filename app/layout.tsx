@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Vadims Vibe",
-  description: "Portfolio of Vadims Vibe",
+  description: "Разработчик игр и веб-приложений, разработка сайтов и веб-приложений",
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
     title: "Vadims Vibe",
-    description: "Portfolio of Vadims Vibe",
+    description: "Разработчик игр и веб-приложений, разработка сайтов и веб-приложений",
     url: "https://vadims-vibe.com",
   },
 };
