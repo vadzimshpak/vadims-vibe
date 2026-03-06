@@ -45,13 +45,12 @@ export default function ContactsPage() {
               <Link href="/" className="site-header__nav-item site-header__nav-item--muted">
                 Главная
               </Link>
-              <button
-                type="button"
+              <Link
+                href="/about"
                 className="site-header__nav-item site-header__nav-item--muted"
-                disabled
               >
                 Обо мне
-              </button>
+              </Link>
               <Link
                 href="/contacts"
                 className="site-header__nav-item site-header__nav-item--active"
@@ -101,13 +100,9 @@ export default function ContactsPage() {
               <Link href="/" className="site-footer__nav-item">
                 Главная
               </Link>
-              <button
-                type="button"
-                className="site-footer__nav-item site-footer__nav-item--muted"
-                disabled
-              >
+              <Link href="/about" className="site-footer__nav-item site-footer__nav-item--muted">
                 Обо мне
-              </button>
+              </Link>
               <Link href="/contacts" className="site-footer__nav-item">
                 Контакты
               </Link>

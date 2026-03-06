@@ -19,13 +19,12 @@ export default function Home() {
               >
                 Главная
               </Link>
-              <button
-                type="button"
+              <Link
+                href="/about"
                 className="site-header__nav-item site-header__nav-item--muted"
-                disabled
               >
                 Обо мне
-              </button>
+              </Link>
               <Link
                 href="/contacts"
                 className="site-header__nav-item site-header__nav-item--muted"
@@ -106,12 +105,12 @@ export default function Home() {
               <Link href="/" className="site-footer__nav-item">
                 Главная
               </Link>
-              <button
-                type="button"
+              <Link
+                href="/about"
                 className="site-footer__nav-item site-footer__nav-item--muted"
               >
                 Обо мне
-              </button>
+              </Link>
               <Link
                 href="/contacts"
                 className="site-footer__nav-item site-footer__nav-item--muted"

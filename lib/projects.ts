@@ -42,6 +42,15 @@ export const projects: Project[] = [
     image: "/projects/megadonk.jpg",
     url: "https://play.google.com/store/apps/details?id=com.eastcult.MegaDonk",
   },
+  {
+    slug: "vadims-vibe",
+    title: "Сайт-портфолио",
+    summary: "Сайт практически полностью сделанный с ИИ",
+    stack: ["Cursor", "Next.js", "TypeScript", "CSS", "Tailwind CSS"],
+    description: "Сайт практически полностью сделанный с ИИ. Идея была в том, чтобы сделать сайт-портфолио, который был бы сделан с ИИ.",
+    image: "/projects/portfolio.jpg",
+    url: "https://vadims-vibe.ru",
+  },
 ];
 
 export const findProjectBySlug = (slug: string): Project | undefined =>

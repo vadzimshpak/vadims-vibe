@@ -147,12 +147,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <Link href="/" className="site-footer__nav-item">
                 Главная
               </Link>
-              <button
-                type="button"
-                className="site-footer__nav-item site-footer__nav-item--muted"
-              >
+              <Link href="/about" className="site-footer__nav-item site-footer__nav-item--muted">
                 Обо мне
-              </button>
+              </Link>
               <Link
                 href="/contacts"
                 className="site-footer__nav-item site-footer__nav-item--muted"
