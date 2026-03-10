@@ -24,6 +24,16 @@ export const projects: Project[] = [
     url: "https://tfmetal.store",
   },
   {
+    slug: "3dmania",
+    title: "3DMania",
+    summary:
+      "Сайт для генерации 3D моделей",
+    stack: ["Next.js", "TypeScript", "CSS", "Prisma", "Cursor"],
+    image: "/projects/3dmania.jpg",
+    description: "Сайт для генерации 3D моделей. Полностью сделанный с ИИ.",
+    url: "https://3dmania.space",
+  },
+  {
     slug: "unity-bbf",
     title: "Unity игра - Bound By Flame",
     summary:

@@ -1,3 +1,25 @@
+// Анимации
+@keyframes project-row-slide-up-in {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin project-row-slide-up {
+  transition:
+    transform 0.22s ease-out,
+    box-shadow 0.22s ease-out;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
 // Projects block
 .projects-block {
   margin-top: 32px;
@@ -59,17 +81,16 @@
   text-decoration: none;
   color: inherit;
   overflow: hidden;
-  transition: transform 0.2s ease-out;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: project-row-slide-up-in 0.55s ease-out forwards;
+  @include project-row-slide-up;
   gap: 16px;
 
   &:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
-  }
-
-  &:hover {
-    transform: scale(1.01);
   }
 }
 
